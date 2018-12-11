@@ -32,7 +32,7 @@ if (in_array('--json', $argv, true)) {
     $items = 0;
     echo PHP_EOL . sprintf(
         '  %2s: %20s %30s %7s' . PHP_EOL,
-        'Id', 'Username:', 'Email:', 'Enabled:'
+        'Id', 'Username:', 'Email:', 'Enabled:','IsAdmin'
     );
     /** @var User $user */
     foreach ($users as $user) {
@@ -41,11 +41,14 @@ if (in_array('--json', $argv, true)) {
             $user->getId(),
             $user->getUsername(),
             $user->getEmail(),
-            ($user->isEnabled()) ? 'true' : 'false'
+            ($user->isEnabled()) ? 'true' : 'false',
+             ($user->getisAdmin()) ? 'true' : 'false'
         ),
         PHP_EOL;
         $items++;
     }
-
+    if (in_array('--json', $argv, true)) {
+        echo json_encode($results, JSON_PRETTY_PRINT);
+    }
     echo "\nTotal: $items users.\n\n";
 }

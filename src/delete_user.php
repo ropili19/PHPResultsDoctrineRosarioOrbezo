@@ -1,7 +1,7 @@
 <?php
 /**
  * PHP version 7.2
- * src\create_user_admin.php
+ * src\create_result.php
  *
  * @category Utils
  * @package  MiW\Results
@@ -10,6 +10,7 @@
  * @link     http://www.etsisi.upm.es ETS de Ingeniería de Sistemas Informáticos
  */
 
+use MiW\Results\Entity\Result;
 use MiW\Results\Entity\User;
 use MiW\Results\Utils;
 
@@ -24,20 +25,37 @@ $dotenv->load();
 
 $entityManager = Utils::getEntityManager();
 
-$user = new User();
-$user->setUsername($_ENV['ADMIN_USER_NAME']);
-$user->setEmail($_ENV['ADMIN_USER_EMAIL']);
-$user->setPassword($_ENV['ADMIN_USER_PASSWD']);
-$user->setEnabled(true);
-$user->setIsAdmin(true);
+if ($argc <2 || $argc >3) {
+    $fich = basename(__FILE__);
+    echo <<< MARCA_FIN
+
+    Usage: $fich <UserId> 
+
+MARCA_FIN;
+    exit(0);
+}
+
+
+$userId       = (int) $argv[1];
 
 try {
-    $entityManager->persist($user);
-    $entityManager->flush();
-    if (in_array('--json', $argv, true)) {
-        echo json_encode($results, JSON_PRETTY_PRINT);
+    /** @var User $user */
+    $user = $entityManager
+        ->getRepository(User::class)
+        ->findOneBy(['id' => $userId]);
+    if (null === $user) {
+        echo "Usuario con Id $userId no encontrado" . PHP_EOL;
+        exit(0);
+    }else{
+        $entityManager->remove($user);
+        $entityManager->flush();
     }
-    echo 'Created Admin User with ID #' . $user->getId() . PHP_EOL;
+    if (in_array('--json', $argv, true)) {
+        echo json_encode($user, JSON_PRETTY_PRINT). PHP_EOL;
+    }
+    echo 'Delete el User with ID #' . $userId . PHP_EOL;
 } catch (Exception $exception) {
+
     echo $exception->getMessage() . PHP_EOL;
 }
+

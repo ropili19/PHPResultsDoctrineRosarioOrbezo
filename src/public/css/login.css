@@ -1,0 +1,36 @@
+
+.formContainer {
+    background-color: #17b89a5e !important;
+    padding: 20px;
+    margin:10%;
+    background-color: transparent;
+    background-image: none;
+}
+
+.formBorder {
+    border: 1px black solid;
+    border-radius: 5px;
+    margin: 2%;
+    padding: 20px;
+}
+
+.formLegend {
+    border: none;
+    width: inherit;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.centerText {
+    text-align: center;
+}
+#loginpage{
+    background-image: url(../img/padel6.jpg);
+    background-size: cover;
+    opacity: 0.7 !important;
+    filter: alpha(opacity=50);
+}
+.cont {
+    background-color: #17b89a5e;
+    padding: 20px;
+}

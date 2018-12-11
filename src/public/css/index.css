@@ -1,0 +1,79 @@
+/* CSS styles for "index.html" page */
+
+.carousel-caption {
+	text-align: left !important;
+	width:33%;
+    opacity: 0.7 !important;
+    filter: alpha(opacity=50);
+
+}
+
+
+.carousel-inner .item{
+    height:500px;
+    background-size:cover;
+    background-position: center center;
+}
+@media (max-width: 688px) {
+    .carousel-item>img {
+      /*  max-height: 146px;*/
+    }
+}
+.carousel-inner{
+    width: auto;
+    height: 400px;
+}
+.carousel-item  {
+    width: auto;
+    height: 400px;
+
+}
+#pageName {
+    font-size: xx-large;
+    color: black;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+#mainLogo {
+    margin: 0 auto;
+    height: 100px;
+    width: 100px;
+    opacity: 0.7;
+}
+
+.columnHeader {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #1d760d;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #28a74524;
+}
+
+.columnsContainer {
+    padding: 0;
+    margin: 0;
+}
+
+.justify {
+    text-align: justify;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.imagen{
+   background-image: url('../img/padel.png');
+}
+#container_serv{
+    background-image: url('../img/construccion.png');
+    height:500px;
+    background-size:cover;
+    background-position: center center;
+}

@@ -1,0 +1,71 @@
+/* CSS styles for navigation bar in all pages */
+
+
+.navigationBar {
+    padding: 5px;
+    background-color: #96ee7e;
+}
+
+#logoContainer {
+    float: left;
+    margin-right: 20px;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+}
+
+#logoTitle {
+    vertical-align: middle;
+    font-size: medium;
+    font-weight: bold;
+    color: #2b669a;
+}
+
+
+
+.bg-teal{
+	background-color:teal;
+}
+.btn-teal {
+    background-color: #009688;
+    border-color: #009688;
+    color: #fff;
+	
+}
+
+
+.txt-forteal{
+	    border-color: #009688;
+    -webkit-text-fill-color: #fff;
+}
+
+.link-teal{
+	color:#fff;
+}
+
+
+.optionright{
+	margin-left:35%;
+}
+a{
+	color:white !important; 
+}
+
+#mainNav {
+  border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+  background-color: #fff;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#mainNav .navbar-brand {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #F05F40;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+

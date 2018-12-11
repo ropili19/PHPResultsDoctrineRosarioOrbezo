@@ -1,0 +1,64 @@
+
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 formContainer">
+            <fieldset class="formBorder">
+                <legend class="formLegend">Registro de usuario</legend>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">
+                            Usuario:<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username"
+                                   placeholder="Identificador de usuario" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">
+                            Correo:<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Email" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">
+                            Clave:<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" placeholder="Clave" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="repeatedPassword" class="col-sm-2 control-label">
+                            Repita la clave:<span class="text-danger">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="repeatedPassword"
+                                   placeholder="Repita la clave" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate" class="col-sm-2 control-label">
+                            Fecha de nacimiento:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="birthDate" required/>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="button" onclick="enviar();" class="btn btn-info">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+</div>

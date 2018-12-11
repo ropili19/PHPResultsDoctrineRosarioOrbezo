@@ -37,7 +37,7 @@ MARCA_FIN;
 
 $newResult    = (int) $argv[1];
 $userId       = (int) $argv[2];
-$newTimestamp = $argv[3] ?? new DateTime('now');
+$newTimestamp = ($argv[3]!=='--json')?$argv[3]: new DateTime('now');
 
 /** @var User $user */
 $user = $entityManager
@@ -54,6 +54,9 @@ try {
     $entityManager->flush();
     echo 'Created Result with ID ' . $result->getId()
         . ' USER ' . $user->getUsername() . PHP_EOL;
+    if (in_array('--json', $argv, true)) {
+        echo json_encode($result, JSON_PRETTY_PRINT);
+    }
 } catch (Exception $exception) {
     echo $exception->getMessage();
 }
